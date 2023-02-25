@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HelloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,3 +68,6 @@ Route::patch('/post/{post}/update', [PostController::class, 'update'])
 Route::delete('/post/{post}/destroy', [PostController::class, 'destroy'])
   ->name('post.destroy')
   ->where('post', '[0-9]+');
+
+Route::get('/hello/index', [HelloController::class, 'index'])
+  ->name('hello.index');

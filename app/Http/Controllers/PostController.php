@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostRegistPost;
+use App\Sample\Test;
 
 class PostController extends Controller
 {
