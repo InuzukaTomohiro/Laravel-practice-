@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\DiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,4 +71,7 @@ Route::delete('/post/{post}/destroy', [PostController::class, 'destroy'])
   ->where('post', '[0-9]+');
 
 Route::get('/hello/index', [HelloController::class, 'index'])
-  ->name('hello.index');
+  ->name('hello');
+
+Route::get('/dice', [DiceController::class, 'rollDouble'])
+  ->name('dice');

@@ -4,11 +4,11 @@
   </x-slot>
   <body>
     <h1>Hello</h1>
-    <p>{!!$strMsg!!}</p>
+    <p>{{$strMsg}}</p>
     <ul>
       @foreach($aryData as $item)
       <li>
-        {!!$item!!}
+        {{$item}}
       </li>
       @endforeach
     </ul>
