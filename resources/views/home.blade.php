@@ -11,6 +11,7 @@
       <li><a href="{{ route('post.index') }}">投稿機能(CRUD処理)</a></li>
       <li><a href="{{ route('hello') }}">メソッドインジェクション</a></li>
       <li><a href="{{ route('dice') }}">サイコロゲーム(コンストラクトインジェクション)</a></li>
+      <li><a href="{{ route('search') }}">投稿検索機能</a></li>
     </ul>
   <p>こんにちは！
   @if (Auth::check())
