@@ -21,16 +21,4 @@ class UserEloquentRepository
   {
     return User::all();
   }
-
-  public function correctUser($id)
-  {
-    $user = $this->find($id);
-    $users = $this->all();
-    $currentUser = $this->currentUser();
-
-    if ($user != $currentUser) {
-      $flash = "指定のURLはアクセスできません。";
-      return view('user.index', compact('flash', 'users'));
-    }
-  }
 }

@@ -42,7 +42,7 @@ class UserController extends Controller
     
     if ($user != $currentUser) {
       $flash = "指定のURLはアクセスできません。";
-      return view('user.index', compact('flash', 'users'));
+      return redirect()->route('user.index')->with(compact('users', 'flash'));
     }
   
     return view('user.edit', compact('user'));
