@@ -44,12 +44,10 @@ Route::get('/logout', [LoginController::class, 'logout'])
   ->middleware('auth')
   ->name('logout');
 // ユーザ関連
-Route::get('/user/{id}', [UserController::class, 'show'])
-  ->name('user.show');
-Route::get('user/{id}/edit', [UserController::class, 'edit'])
-  ->name('user.edit');
-Route::patch('user/{id}/edit', [UserController::class, 'update'])
-  ->name('user.update');
+Route::get('/users', [UserController::class, 'index'])           ->name('user.index');
+Route::get('/user/{id}', [UserController::class, 'show'])        ->name('user.show');
+Route::get('user/{id}/edit', [UserController::class, 'edit'])    ->name('user.edit');
+Route::patch('user/{id}/edit', [UserController::class, 'update'])->name('user.update');
 
 // 投稿関連
 Route::get('/post/create', [PostController::class, 'create'])

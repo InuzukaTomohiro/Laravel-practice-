@@ -7,7 +7,7 @@
   </div>
     <h3 class="border-bottom">実装機能一覧</h3>
     <ul>
-      <li>ユーザー認証機能</li>
+      <li><a href="{{ route('user.index') }}">ユーザー認証機能</a></li>
       <li><a href="{{ route('post.index') }}">投稿機能(CRUD処理)</a></li>
       <li><a href="{{ route('hello') }}">メソッドインジェクション</a></li>
       <li><a href="{{ route('dice') }}">サイコロゲーム(コンストラクトインジェクション)</a></li>
