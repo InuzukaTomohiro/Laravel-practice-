@@ -29,10 +29,18 @@ class PostController extends Controller
 
   public function store(PostRegistPost $request)
   {
+    $image = $request->image;
+    if ($request->hasFile('image')) {
+        $path = \Storage::put('/public', $image);
+        $path = explode('/', $path);
+    }else{
+      $path = null;
+    }
+
     $post = new Post();
     $post->title = $request->title;
     $post->body = $request->body;
-
+    $post->file_name = $path[1];
     $post->save();
 
     return redirect()->route('post.index');
@@ -45,10 +53,10 @@ class PostController extends Controller
 
   public function update(PostRegistPost $request, Post $post)
   {
+
     $post->title = $request->title;
     $post->body = $request->body;
-
-    $post->save();
+    $post->update();
 
     return redirect()->route('post.show', $post);
   }

@@ -8,6 +8,7 @@
     @forelse ($posts as $post)
       <a href="{{ route('post.show', $post)}}">
         <li>
+          <img src="{{ '/storage/' . $post->file_name }}" class='w-100 mb-3'/>
           {{ $post->title }}
           <div class="delete_btn">
             <form action="{{ route('post.destroy', $post) }}" method="post" onclick='return confirm("削除しますか？");'>
@@ -15,7 +16,7 @@
               @csrf
               <button type="submit">削除</button>
             </form>
-        </div>
+          </div>
         </li>
       </a>
     @empty

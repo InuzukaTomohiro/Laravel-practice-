@@ -27,11 +27,8 @@ class DiceController extends Controller
     // } else {
     //     $dice = new Dice();
     // }
-
-    
-
     $totalDice =  $this->dice->roll() + $this->dice->roll();
 
-    return view('dice.index', compact('totalDice'));
+    return view('dice.index', compact('totalDice', 'dice'));
   }
 }
