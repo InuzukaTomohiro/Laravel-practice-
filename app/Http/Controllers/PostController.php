@@ -7,6 +7,7 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PostRegistPost;
 use App\Sample\Test;
+use Illuminate\Support\Facades\Response;
 
 class PostController extends Controller
 {
@@ -37,10 +38,15 @@ class PostController extends Controller
       $path = null;
     }
 
+    //JsonResponseのdd!!
+    $response = Response::json(['status' => 'success']);
+    $response = response()->json(['status' => 'success']);
+    dd($request);
+
     $post = new Post();
-    $post->title = $request->title;
-    $post->body = $request->body;
-    $post->file_name = $path[1];
+    $post->title = $request->getTitle();
+    $post->body = $request->getBody();
+    $post->file_name = $path[1] ?? null;
     $post->save();
 
     return redirect()->route('post.index');
@@ -54,8 +60,8 @@ class PostController extends Controller
   public function update(PostRegistPost $request, Post $post)
   {
 
-    $post->title = $request->title;
-    $post->body = $request->body;
+    $post->title = $request->getTitle();
+    $post->body = $request->getBody();
     $post->update();
 
     return redirect()->route('post.show', $post);

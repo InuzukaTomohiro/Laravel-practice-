@@ -8,6 +8,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\DiceController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\JsonResponseController;
+use App\Http\Controllers\ArticlePayloadActionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,3 +79,7 @@ Route::get('/dice', [DiceController::class, 'rollDouble'])
 
 Route::get('/search', [SearchController::class, 'index'])
   ->name('search');
+
+Route::get('/json-response', [JsonResponseController::class])->name('json_response');
+
+Route::get('/payload', [ArticlePayloadAction::class]);

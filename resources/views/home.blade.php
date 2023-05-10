@@ -12,6 +12,8 @@
       <li><a href="{{ route('hello') }}">メソッドインジェクション</a></li>
       <li><a href="{{ route('dice') }}">サイコロゲーム(コンストラクトインジェクション)</a></li>
       <li><a href="{{ route('search') }}">投稿検索機能</a></li>
+      <li>画像投稿機能2/28</li>
+      <li>RESTful API基本概念ファイル 5/9<br>(Http/Resources配下のクラス + ArticlePayloadActionController)</li>
     </ul>
   <p>こんにちは！
   @if (Auth::check())

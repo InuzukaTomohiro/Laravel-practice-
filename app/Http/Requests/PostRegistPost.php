@@ -36,4 +36,14 @@ class PostRegistPost extends FormRequest
         'body.max' => '内容は200文字以内で設定してください。'
       ];
     }
+
+    public function getTitle(): string
+    {
+      return $this->input('title');
+    }
+
+    public function getBody(): string
+    {
+      return $this->input('body');
+    }
 }
